@@ -16,8 +16,8 @@ class Adcb_uae_sub_copySpider(scrapy.Spider):
     def start_requests(self):
         folder_path = os.path.dirname(os.path.abspath(__file__))
         for file_name in os.listdir(folder_path):
-            # if file_name.endswith(".mhtml") and '-' in file_name:
-            if file_name.endswith(".mhtml"):
+            if file_name.endswith(".mhtml") and '-' in file_name:
+            # if file_name.endswith(".mhtml"):
                 # print(file_name)
                 file_path = f"file://{os.path.abspath(os.path.join(folder_path, file_name))}"
 
@@ -383,7 +383,7 @@ class Adcb_uae_sub_copySpider(scrapy.Spider):
             Bucket_greater_6_amount = Bucket_greater_6_amount.split('</td>')[0].strip()
 
         # scrape_date = date.today()
-        scrape_date = '2025-04-03'
+        scrape_date = '2025-04-08'
         items = parser.xpath(xpath_data)
         data = {}
         for item in items:
